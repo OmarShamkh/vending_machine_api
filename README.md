@@ -113,7 +113,7 @@ This repository contains the source code for a RESTful API for managing a vendin
 2. Run the tests using:
 
     ```bash
-    python manage.py test
+    python manage.py test users products
     ```
 ### Postman Collection for API Testing
 
