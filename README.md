@@ -31,7 +31,7 @@ This repository contains the source code for a RESTful API for managing a vendin
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/vending-machine-api.git
+    git clone https://github.com/omarshamkh/vending-machine-api.git
     ```
 
 2. Navigate to the project directory:
