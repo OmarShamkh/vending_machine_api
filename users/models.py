@@ -9,10 +9,9 @@ class CustomUser(AbstractUser):
     ]
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='buyer')
 
-    # Provide unique related_name arguments for groups and user_permissions fields
-    groups = None  # Remove default related_name
-    user_permissions = None  # Remove default related_name
+    # override the default fields
+    groups = None  
+    user_permissions = None
 
     class Meta:
-        # Specify a unique app_label for your custom User model
         app_label = 'users'
