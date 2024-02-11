@@ -55,19 +55,19 @@ This repository contains the source code for a RESTful API for managing a vendin
 5. Install dependencies:
 
     ```bash
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
     ```
 
 6. Run database migrations:
 
     ```bash
-    python manage.py migrate
+    python3 manage.py migrate
     ```
 
 7. Start the development server:
 
     ```bash
-    python manage.py runserver
+    python3 manage.py runserver
     ```
 
 ## Usage
@@ -113,7 +113,7 @@ This repository contains the source code for a RESTful API for managing a vendin
 2. Run the tests using:
 
     ```bash
-    python manage.py test users products
+    python3 manage.py test users products
     ```
 ### Postman Collection for API Testing
 
