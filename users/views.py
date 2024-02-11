@@ -39,6 +39,8 @@ class UserDetail(APIView):
 
     def put(self, request, pk):
         user = self.get_object(pk)
+        if request.user != user:
+            return Response({'error': 'You do not have permission to perform this action.'}, status=status.HTTP_403_FORBIDDEN)
         serializer = UserSerializer(user, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -47,6 +49,8 @@ class UserDetail(APIView):
 
     def delete(self, request, pk):
         user = self.get_object(pk)
+        if request.user != user:
+            return Response({'error': 'You do not have permission to perform this action.'}, status=status.HTTP_403_FORBIDDEN)
         user.delete()
         message = {'message': 'User was deleted successfully!'}
         return Response(message ,  status=status.HTTP_204_NO_CONTENT)
