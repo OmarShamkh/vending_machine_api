@@ -133,7 +133,7 @@ class BuyView(APIView):
         buyer.save()
         
         product.amountAvailable -= amount
-        if product.amountAvailable == 0:
+        if product.amountAvailable <= 0:
             product.amountAvailable = 0
             
         product.save()
