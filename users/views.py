@@ -122,6 +122,9 @@ class BuyView(APIView):
         if amount <= 0:
             return Response({'error': 'Invalid amount. Please provide a positive integer.'}, status=status.HTTP_400_BAD_REQUEST)
         
+        if amount > product.amountAvailable:
+            return Response({'error': 'Insufficient stock.'}, status=status.HTTP_403_FORBIDDEN)
+        
         total_cost = product.cost * amount
         if buyer.deposit < total_cost:
             return Response({'error': 'Insufficient funds.'}, status=status.HTTP_403_FORBIDDEN)
@@ -130,6 +133,9 @@ class BuyView(APIView):
         buyer.save()
         
         product.amountAvailable -= amount
+        if product.amountAvailable == 0:
+            product.amountAvailable = 0
+            
         product.save()
         
         change = buyer.deposit
