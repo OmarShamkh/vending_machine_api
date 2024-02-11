@@ -26,6 +26,31 @@ This repository contains the source code for a RESTful API for managing a vendin
 - SQLite: Database management system
 - Postman: API development and testing environment
 
+
+## Django project structure
+
+- `vending_machine_api/`: Main project directory
+    - `users/`: App for managing user operations
+        - `migrations/`: Database migration files
+        - `tests/`: Test cases for user operations
+        - `__init__.py`: Initialization file for the app
+        - `admin.py`: Admin configurations for user models
+        - `models.py`: User model definitions
+        - `serializers.py`: Serializers for user models
+        - `urls.py`: URL configurations for user API endpoints
+        - `views.py`: Views for handling user operations
+    - `products/`: App for managing product operations
+        - `migrations/`: Database migration files
+        - `tests/`: Test cases for product operations
+        - `__init__.py`: Initialization file for the app
+        - `admin.py`: Admin configurations for product models
+        - `models.py`: Product model definitions
+        - `serializers.py`: Serializers for product models
+        - `urls.py`: URL configurations for product API endpoints
+        - `views.py`: Views for handling product operations
+    - `manage.py`: Django command-line utility for administrative tasks
+    - `requirements.txt`: List of Python dependencies
+
 ## Installation
 
 1. Clone the repository:
