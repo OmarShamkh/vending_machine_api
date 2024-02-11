@@ -115,4 +115,7 @@ This repository contains the source code for a RESTful API for managing a vendin
     ```bash
     python manage.py test
     ```
+### Postman Collection for API Testing
+
+You can find the Postman collection for testing the API endpoints [here](https://github.com/OmarShamkh/vending_machine_api/tree/master/postman_collection_test).
 
