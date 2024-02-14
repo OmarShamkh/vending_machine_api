@@ -98,7 +98,7 @@ This repository contains the source code for a RESTful API for managing a vendin
 ## Usage
 
 1. Ensure the development server is running.
-2. Access the API endpoints using tools like Postman or through your web browser.
+2. Access the API endpoints from http://localhost:8000/api/docs/
 
 ## API Endpoints
 
@@ -140,17 +140,7 @@ This repository contains the source code for a RESTful API for managing a vendin
     ```bash
     python3 manage.py test users products
     ```
-### Edge cases :
-- Test for creating a user with an existing username.
-- Test for depositing funds into a user account.
-- Test for buying a product with insufficient funds.
-- Test for buying a product with sufficient funds.
-- Test for depositing negative funds into a user account.
-- Test for buying a product with a negative quantity.
-- Test for buying a product with a negative price.
-- Test for buying a product with a negative deposit amount.
-
-### Postman Collection for API Testing
-
-You can find the Postman collection for testing the API endpoints [here](https://github.com/OmarShamkh/vending_machine_api/tree/master/postman_collection_test).
+### Swagger Documentation
+you can access the swagger documentation from the following link:
+http://localhost:8000/api/docs/
 
