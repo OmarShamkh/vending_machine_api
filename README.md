@@ -62,7 +62,7 @@ This repository contains the source code for a RESTful API for managing a vendin
 2. Navigate to the project directory:
 
     ```bash
-    cd vending-machine-api
+    cd vending-machine-api/
     ```
 
 3. Create a virtual environment:
@@ -147,6 +147,6 @@ This repository contains the source code for a RESTful API for managing a vendin
     python3 manage.py test users products
     ```
 ### Swagger Documentation
-you can access the swagger documentation from the following link:
+You can access the swagger documentation from the following link:
 http://localhost:8000/api/docs/
 
