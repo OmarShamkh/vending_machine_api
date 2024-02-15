@@ -83,13 +83,19 @@ This repository contains the source code for a RESTful API for managing a vendin
     pip3 install -r requirements.txt
     ```
 
-6. Run database migrations:
+6. Generate a SECRET_KEY for the Django application. You can use a random string generator tool or generate one manually. Replace the placeholder `YOUR_SECRET_KEY_HERE` in the `.env.example` file with your generated secret key.
+    
+    ```bash
+    mv .env.example .env
+    ```
+
+7. Run database migrations:
 
     ```bash
     python3 manage.py migrate
     ```
 
-7. Start the development server:
+8. Start the development server:
 
     ```bash
     python3 manage.py runserver
