@@ -7,10 +7,10 @@ from .serializers import UserSerializer
 from django.http import Http404
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate, login, logout
-from products.models import Product
+from products.models import Product , User
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-
+from django.db import transaction
 class UserListCreate(APIView):
 
     @swagger_auto_schema(
@@ -155,6 +155,7 @@ class DepositView(APIView):
         operation_description="Deposit coins",
         security=[{'Bearer': []}]
     )
+    @transaction.atomic
     def post(self, request):
         if not request.user.is_authenticated:
             return Response({'error': 'Authentication credentials were not provided.'}, status=status.HTTP_401_UNAUTHORIZED)
@@ -166,7 +167,7 @@ class DepositView(APIView):
         if deposit_amount not in [5, 10, 20, 50, 100]:
             return Response({'error': 'Invalid deposit amount. Accepted values are 5, 10, 20, 50, and 100.'}, status=status.HTTP_400_BAD_REQUEST)
         
-        user = request.user
+        user = User.objects.select_for_update().get(pk=request.user.id)
         user.deposit += deposit_amount
         user.save()
         
