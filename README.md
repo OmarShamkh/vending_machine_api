@@ -1,5 +1,4 @@
 # Vending Machine API
-(FlapKap’s Backend challenge!)
 This repository contains the source code for a RESTful API for managing a vending machine system. The API allows users to perform various operations such as user authentication, product management, depositing funds, purchasing products, and resetting deposits.
 
 ## Table of Contents
