@@ -61,7 +61,7 @@ This repository contains the source code for a RESTful API for managing a vendin
 2. Navigate to the project directory:
 
     ```bash
-    cd vending-machine-api
+    cd vending-machine-api/
     ```
 
 3. Create a virtual environment:
